@@ -45,30 +45,7 @@ Output includes:
 [Speedup] CPU/GPU (end-to-end): S2.x
 ```
 
-- **Rel diff (RRRR)** is the relative difference between CPU and GPU inertias; small values indicate numeric agreement.
-- **Speedups S1/S2** are **provable** and will depend on hardware and dataset size. Use larger `--n` for clearer wins.
 
----
-
-## Why This is Résumé-Proof
-
-- Implements **real CUDA kernels** (assignment + accumulation and finalize) with atomics for centroid updates.
-- Provides **CPU baseline** and **relative-inertia verification**, avoiding label-permutation pitfalls.
-- Separately reports **kernel time** and **end-to-end time**, enabling fair speedup claims.
-
-### Suggested Résumé Bullet (fill in with your measured result)
-> Implemented CUDA-accelerated K-Means (assignment + centroid update kernels), achieving **≥5× speedup** over single-threaded CPU on a 1M×32 dataset (10 iterations, K=10); validated numerics via inertia match (relative diff ≤ 1e-3) and provided a reproducible benchmark harness.
-
-- The **≥5×** claim is **conservative** and typically reproducible on mainstream NVIDIA GPUs for large N.
-- Replace the number with your **measured** speedup after running on real hardware.
-
----
-
-## Notes
-
-- Deterministic initialization: first K points are used as initial centroids on both CPU and GPU for comparability.
-- Floating-point differences may cause tiny inertia differences; we report relative difference for transparency.
-- For more performance, consider block-level partial reductions before atomics, streams, or better memory layouts.
 
 ---
 

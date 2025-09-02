@@ -1,5 +1,5 @@
 
-# CUDA K-Means — Reproducible, Benchmarkable, and Resume-Proof
+# CUDA K-Means — Reproducible, Benchmarkable
 
 This project implements **K-Means clustering** with both:
 - A **single-threaded CPU baseline**

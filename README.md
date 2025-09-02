@@ -5,7 +5,7 @@ This project implements **K-Means clustering** with both:
 - A **single-threaded CPU baseline**
 - A **CUDA-accelerated** version (GPU), with kernels for assignment and centroid recomputation
 
-It includes **reproducible benchmarking** and **numeric verification** (inertia comparison), so any reviewer can validate your resume claims.
+It includes **reproducible benchmarking** and **numeric verification** (inertia comparison).
 
 ---
 
